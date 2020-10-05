@@ -27,7 +27,7 @@ class Clientes
 
         $_array = array(
             ':nombre' => $_params['nombre'],
-            'descripcion' => $_params['descripcion'],
+            ':descripcion' => $_params['descripcion'],
             ':imagen' => $_params['imagen'],
             ':categoria_id' =>  $_params['categoria_id'],
             ':telefono' => $_params['telefono'],
