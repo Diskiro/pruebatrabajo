@@ -1,23 +1,20 @@
 {
-    "name": "joshua/empresas",
-    "description": "Prueba para trabajo",
+    "name": "joshua/pruebatrabajo",
+    "description": "prueba para un trabajo",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "joshua andrade",
+            "name": "Joshua Andrade Medel",
             "email": "jam0624@hotmail.com"
-        }
+        }        
     ],
-    "minimum-stability": "dev",
     "require": {
 
     },
-
     "autoload": {
         "psr-4": {
             "Prueba\\":"src/"
         }
     }
-
 }

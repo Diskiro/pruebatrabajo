@@ -1,6 +1,6 @@
 <?php
 
-namespace Pruebas;
+namespace Prueba;
 
 
 class Clientes

@@ -49,8 +49,8 @@
                     <tbody>
                         <?php
                         require '../vendor/autoload.php';
-                        $producto = new Prueba\Clientes;
-                        $info_producto = $producto->mostar();
+                        $cliente = new Prueba\Clientes;
+                        $info_cliente = $cliente->mostar();
                         $cantidad = count($info_producto);
                         if ($cantidad > 0) {
                             $c = 0;
