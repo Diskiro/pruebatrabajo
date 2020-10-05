@@ -31,7 +31,6 @@ class Clientes
             ':imagen' => $_params['imagen'],
             ':categoria_id' =>  $_params['categoria_id'],
             ':telefono' => $_params['telefono'],
-            // ':nacimiento' => $_params['nacimiento']
 
         );
 
