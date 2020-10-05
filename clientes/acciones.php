@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "imagen" => subirFoto(),
             "categoria_id" => $_POST["categoria_id"],
             "telefono" => $_POST["telefono"],
-            // "nacimiento" => date("Y-m-d")
         );
 
         $rpt = $cliente->registrar($_params);
@@ -40,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if ($_POST["accion"] === "Actualizar") {
+
 
         if (empty($_POST["nombre"]))
             exit("completar Nombre");
@@ -60,11 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_params = array(
             "nombre" => $_POST["nombre"],
             "descripcion" => $_POST["descripcion"],
-            "imagen" => subirFoto(),
             "categoria_id" => $_POST["categoria_id"],
             "telefono" => $_POST["telefono"],
             "id" => $_POST["id"]
         );
+
+        
 
         if (!empty($_POST["foto_temp"]))
             $_params["imagen"] = $_POST["foto_temp"];
@@ -74,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         $rpt = $cliente->actualizar($_params);
+
+
 
         if ($rpt)
             header("Location:index.php");

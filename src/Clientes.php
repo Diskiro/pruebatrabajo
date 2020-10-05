@@ -42,7 +42,7 @@ class Clientes
 
     public function actualizar($_params)
     {
-        $sql = 'UPDATE `empresa` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=categoria_id,`telefono`=:telefono WHERE `id`=id';
+        $sql = 'UPDATE `empresa` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=categoria_id,`telefono`=:telefono, WHERE `id`=id';
 
         $resultado = $this->cn->prepare($sql);
         $_array = array(
@@ -53,6 +53,9 @@ class Clientes
             ':telefono' => $_params['telefono'],
             ':id' => $_params['id']
         );
+
+
+
         if ($resultado->execute($_array))
             return true;
 
