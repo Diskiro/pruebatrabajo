@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_params = array(
             "nombre" => $_POST["nombre"],
             "descripcion" => $_POST["descripcion"],
-            "foto" => subirFoto(),
+            "imagen" => subirFoto(),
             "categoria_id" => $_POST["categoria_id"],
             "telefono" => $_POST["telefono"],
             "id" => $_POST["id"]
