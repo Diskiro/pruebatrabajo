@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Imagen</label>
-                        <input type="file" class="form-control" name="imagen">
+                        <input type="file" class="form-control" name="imagen" required>
                     </div>
                     <input type="submit" name="accion" class="btn btn-primary" value="Registrar">
                     <a href="index.php" class="btn btn-defaut">Cancelar</a>

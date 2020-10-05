@@ -89,7 +89,7 @@
 
                                 </td>
                                 <td class="text-center">
-                                    <a href="../acciones.php?id=<?php print $item["id"] ?>" class="btn btn-danger btn-sm"><span class="glyphicon "></span>Borrar</a>
+                                    <a href="acciones.php?id=<?php print $item["id"] ?>" class="btn btn-danger btn-sm"><span class="glyphicon "></span>Borrar</a>
                                     <a href="form_actualizar.php?id= <?php print $item["id"] ?>" class="btn btn-success btn-sm"><span class="glyphicon"></span>Actualizar</a>
                                 </td>
                             </tr>

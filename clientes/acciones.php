@@ -27,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "imagen" => subirFoto(),
             "categoria_id" => $_POST["categoria_id"],
             "telefono" => $_POST["telefono"],
-            "nacimiento" => date("Y-m-d")
+            // "nacimiento" => date("Y-m-d")
         );
 
         $rpt = $cliente->registrar($_params);
         var_dump($rpt);
 
         if ($rpt)
-            header("Location: clientes/index.php");
+            header("Location: index.php");
         else
             print "Error al registrar el cliente";
     }
@@ -60,10 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_params = array(
             "nombre" => $_POST["nombre"],
             "descripcion" => $_POST["descripcion"],
-            // "foto" => subirFoto(),
+            "foto" => subirFoto(),
             "categoria_id" => $_POST["categoria_id"],
             "telefono" => $_POST["telefono"],
-            "nacimineto" => date("Y-m-d"),
             "id" => $_POST["id"]
         );
 
@@ -71,13 +70,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_params["imagen"] = $_POST["foto_temp"];
 
         if (!empty($_FILES["imagen"]["name"]))
-            $_params["foto"] = subirFoto();
+            $_params["imagen"] = subirFoto();
 
 
         $rpt = $cliente->actualizar($_params);
 
         if ($rpt)
-            header("Location: clientes/index.php");
+            header("Location:index.php");
         else
             print "Error al actualizar el cliente";
     }
@@ -91,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     var_dump($rpt);
 
     if ($rpt)
-        header("Location: clientes/index.php");
+        header("Location:index.php");
     else
         print "Error al eliminar el cliente";
 }

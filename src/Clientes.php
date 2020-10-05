@@ -21,7 +21,7 @@ class Clientes
     public function registrar($_params)
     {
 
-        $sql =  'INSERT INTO `empresa`( `nombre`, `descripcion`, `imagen`, `categoria_id`, `telefono`, `nacimiento`) VALUES (:nombre,:descripcion,:imagen,:categoria_id,:telefono,:nacimiento)';
+        $sql =  'INSERT INTO `empresa`( `nombre`, `descripcion`, `imagen`, `categoria_id`, `telefono`) VALUES (:nombre,:descripcion,:imagen,:categoria_id,:telefono)';
 
         $resultado = $this->cn->prepare($sql);
 
@@ -31,7 +31,7 @@ class Clientes
             ':imagen' => $_params['imagen'],
             ':categoria_id' =>  $_params['categoria_id'],
             ':telefono' => $_params['telefono'],
-            ':nacimiento' => $_params['nacimiento']
+            // ':nacimiento' => $_params['nacimiento']
 
         );
 
@@ -43,16 +43,15 @@ class Clientes
 
     public function actualizar($_params)
     {
-        $sql = 'UPDATE `empresa` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=categoria_id,`telefono`=:telefono,`nacimiento`=nacimiento WHERE `id`=';
+        $sql = 'UPDATE `empresa` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=categoria_id,`telefono`=:telefono WHERE `id`=id';
 
         $resultado = $this->cn->prepare($sql);
         $_array = array(
             ':nombre' => $_params['nombre'],
             ':descripcion' => $_params['descripcion'],
             ':imagen' => $_params['imagen'],
-            ":categoria_id" =>  $_params['categoria_id'],
+            ':categoria_id' => $_params['categoria_id'],
             ':telefono' => $_params['telefono'],
-            ':nacimiento' => $_params['nacimiento'],
             ':id' => $_params['id']
         );
         if ($resultado->execute($_array))
@@ -79,7 +78,7 @@ class Clientes
 
     public function mostar()
     {
-        $sql = "SELECT empresa.id, nombre, descripcion, imagen ,categoria, telefono, nacimiento   FROM `empresa`
+        $sql = "SELECT empresa.id, nombre, descripcion, imagen ,categoria, telefono  FROM `empresa`
         
         INNER JOIN categorias
         ON empresa.categoria_id = categorias.id ORDER BY empresa.id DESC
@@ -89,6 +88,22 @@ class Clientes
 
         if ($resultado->execute())
             return $resultado->fetchAll();
+
+        return false;
+    }
+
+    public function mostrarPorId($id)
+    {
+
+        $sql = "SELECT * FROM `empresa` WHERE `id`=:id ";
+
+        $resultado = $this->cn->prepare($sql);
+        $_array = array(
+            ":id" =>  $id
+        );
+
+        if ($resultado->execute($_array))
+            return $resultado->fetch();
 
         return false;
     }
