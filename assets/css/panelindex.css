@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(45deg,#fead06,#c00def);
+}
+
+.form-login {
+  width: 400px;
+  height: 400px;
+  background: pink;
+  margin: auto;
+  margin-top: 180px;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  color: white;
+  border-radius: 20px;
+}
+.controles {
+  width: 100%;
+  border: 1px solid #017bab;
+  margin-bottom: 15px;
+  padding: 11px 10px;
+  background: rgba(red, green, blue, alpha);
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.buttons {
+  width: 100px;
+  height: 40px;
+  background: #017bab;
+  border: none;
+  color: white;
+  margin-bottom: 16ex;
+  align-content: center;
+}
+
+.form-login p {
+  height: 40px;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.form-login a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form-login a:hover {
+  text-decoration: underline;
+}
+
+.form-login h3 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+  font-size: 20px;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+}
+
