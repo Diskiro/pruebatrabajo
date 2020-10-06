@@ -35,7 +35,7 @@
 
 <br><br><br>
 <div class="col-md-12">
-                <legend>Datos del Producto</legend>
+                <legend>Datos del Empleado</legend>
                 <form method="POST" action="acciones.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nombre</label>

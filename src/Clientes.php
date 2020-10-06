@@ -58,7 +58,7 @@ class Clientes
             ":id" =>$_params["id"]
         );
 
-        var_dump($resultado->execute($_array));
+        
 
 
         if ($resultado->execute($_array))

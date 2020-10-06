@@ -2,8 +2,8 @@
 require "../vendor/autoload.php";
 if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
     $id = $_GET["id"];
-    $producto = new Prueba\Clientes;
-    $resultado = $producto->mostrarPorId($id);
+    $empleado = new Prueba\Clientes;
+    $resultado = $empleado->mostrarPorId($id);
 
     if (!$resultado) {
         header("Location: index.php");
@@ -29,7 +29,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 <body>
 
     <div class="col-md-12">
-        <legend>Datos del Producto</legend>
+        <legend>Datos del Empleado</legend>
         <form method="POST" action="acciones.php" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php print $resultado["id"] ?>">
             <div class="form-group">
