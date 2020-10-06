@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         );
 
         $rpt = $cliente->registrar($_params);
-        var_dump($rpt);
+        // var_dump($rpt);
 
         if ($rpt)
             header("Location: index.php");
@@ -57,15 +57,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit("completar Telefono");
 
 
-        $_params = array(
-            "nombre" => $_POST["nombre"],
-            "descripcion" => $_POST["descripcion"],
-            "categoria_id" => $_POST["categoria_id"],
-            "telefono" => $_POST["telefono"],
-            "id" => $_POST["id"]
-        );
-
-        
+            $_params = array(
+                'nombre' => $_POST["nombre"],
+                'descripcion' => $_POST["descripcion"],
+                
+                'categoria_id' => $_POST["categoria_id"],
+                'telefono' => $_POST["telefono"],
+                'id'=> $_POST["id"]
+            );        
 
         if (!empty($_POST["foto_temp"]))
             $_params["imagen"] = $_POST["foto_temp"];

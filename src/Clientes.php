@@ -25,6 +25,7 @@ class Clientes
 
         $resultado = $this->cn->prepare($sql);
 
+
         $_array = array(
             ':nombre' => $_params['nombre'],
             ':descripcion' => $_params['descripcion'],
@@ -42,26 +43,24 @@ class Clientes
 
     public function actualizar($_params)
     {
-        $sql = "UPDATE `empresa ` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=:categoria_id,`telefono`=:telefono WHERE `id`= :id";
+
+
+        $sql = "UPDATE `empresa` SET `nombre`=:nombre,`descripcion`=:descripcion,`imagen`=:imagen,`categoria_id`=:categoria_id,`telefono`=:telefono WHERE `id`= :id";
 
         $resultado = $this->cn->prepare($sql);
-        
+
         $_array = array(
-            ':nombre' => $_params['nombre'],
-            ':descripcion' => $_params['descripcion'],
-            ':imagen' => $_params['imagen'],
-            ':categoria_id' => $_params['categoria_id'],
-            ':telefono' => $_params['telefono'],
-            ':id' => $_params['id']
+            ":nombre" =>$_params["nombre"],
+            ":descripcion" =>$_params["descripcion"],
+            ":imagen" =>$_params["imagen"],
+            ":categoria_id" =>$_params["categoria_id"],
+            ":telefono" =>$_params["telefono"],
+            ":id" =>$_params["id"]
         );
 
-        
-        var_dump($resultado->execute($_array)) ;
-        var_dump($_array);
-        var_dump($resultado);
-        die;
+        var_dump($resultado->execute($_array));
 
-        
+
         if ($resultado->execute($_array))
             return true;
 
